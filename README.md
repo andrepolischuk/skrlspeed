@@ -19,7 +19,7 @@ $ npm install skrlspeed
   Umd:
 
 ```html
-<script src="https://cdn.rawgit.com/andrepolischuk/skrlspeed/0.1.0/skrlspeed.js"></script>
+<script src="https://cdn.rawgit.com/andrepolischuk/skrlspeed/0.1.1/skrlspeed.js"></script>
 ```
 
 ## API

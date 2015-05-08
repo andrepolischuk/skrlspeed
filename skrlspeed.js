@@ -142,7 +142,7 @@ function Controller(el) {
 
 Controller.prototype.set = function(factor) {
   this._factor = factor || 1;
-  wheel[this._factor === 1 ? 'unbind' : 'bind'](window, this._fn);
+  wheel[this._factor === 1 ? 'unbind' : 'bind'](this._element, this._fn);
   return this;
 };
 
