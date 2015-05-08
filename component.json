@@ -1,0 +1,19 @@
+{
+  "name": "skrlspeed",
+  "description": "Scroll speed controller",
+  "version": "0.0.0",
+  "keywords": [
+    "scroll",
+    "speed",
+    "controller"
+  ],
+  "repository": "andrepolischuk/skrlspeed",
+  "dependencies": {
+    "andrepolischuk/eventwheel": "^0.2.1"
+  },
+  "main" : "index.js",
+  "scripts" : [
+    "index.js"
+  ],
+  "license": "MIT"
+}
