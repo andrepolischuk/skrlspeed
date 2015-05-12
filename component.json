@@ -9,7 +9,7 @@
   ],
   "repository": "andrepolischuk/skrlspeed",
   "dependencies": {
-    "andrepolischuk/eventwheel": "^0.2.1"
+    "andrepolischuk/eventwheel": "^0.3.0"
   },
   "main" : "index.js",
   "scripts" : [
