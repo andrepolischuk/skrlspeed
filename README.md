@@ -13,7 +13,12 @@ $ component install andrepolischuk/skrlspeed
 
 ### skrlspeed([element])
 
-  Return controller for `element`, default `window`
+  Return controller for `element`, default `document`
+
+```js
+var ctrlElement = skrlspeed(document.querySelector('.element'));
+var ctrlPage = skrlspeed();
+```
 
 ### Controller
 
