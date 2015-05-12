@@ -57,9 +57,9 @@ Controller.prototype.set = function(factor) {
  * @api public
  */
 
- Controller.prototype.clear = function() {
-   return this.set();
- };
+Controller.prototype.clear = function() {
+  return this.set();
+};
 
 
 /**

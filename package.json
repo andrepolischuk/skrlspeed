@@ -7,22 +7,11 @@
     "speed",
     "controller"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/andrepolischuk/skrlspeed.git"
-  },
+  "repository": "andrepolischuk/skrlspeed",
   "dependencies": {
     "eventwheel": "^0.2.1"
   },
-  "devDependencies": {
-    "duo": "^0.11.4"
-  },
   "main": "index.js",
-  "scripts": {
-    "clean": "rm -rf skrlspeed.js components",
-    "prebuild": "npm run clean",
-    "build": "duo --standalone skrlspeed --stdout index.js > skrlspeed.js"
-  },
   "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
   "license": "MIT"
 }
