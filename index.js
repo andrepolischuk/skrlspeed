@@ -29,11 +29,11 @@ module.exports = Controller;
 function Controller(el) {
   if (!(this instanceof Controller)) return new Controller(el);
   if (typeof el === 'string') el = document.querySelector(el);
-  if (!el) el = window;
+  if (!el) el = document;
 
   this._element = el;
   this._factor = 1;
-  this._fn = scroll.bind(this);
+  this._fn = scroll(this);
 }
 
 /**
@@ -65,17 +65,21 @@ Controller.prototype.clear = function() {
 /**
  * Scroll handler
  *
+ * @param {Object} obj
  * @param {Event} e
  * @api public
  */
 
-function scroll(e) {
-  e.preventDefault();
+function scroll(obj) {
+  return function(e) {
+    if (e.preventDefault) e.preventDefault();
+    e.returnValue = false;
 
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  var delta = e.deltaY || e.detail || (-e.wheelDelta);
-  delta /= Math.abs(delta);
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var delta = e.deltaY || e.detail || (-e.wheelDelta);
+    delta /= Math.abs(delta);
 
-  document.documentElement.scrollTop =
-    document.body.scrollTop = scrollTop + this._factor * delta * speed;
+    document.documentElement.scrollTop =
+      document.body.scrollTop = scrollTop + obj._factor * delta * speed;
+  };
 }
