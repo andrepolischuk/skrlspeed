@@ -8,7 +8,7 @@
 $ npm install --save skrlspeed
 ```
 
-```js
+```sh
 $ component install andrepolischuk/skrlspeed
 ```
 
