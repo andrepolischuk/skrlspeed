@@ -6,6 +6,9 @@
 
 ```sh
 $ npm install --save skrlspeed
+```
+
+```js
 $ component install andrepolischuk/skrlspeed
 ```
 
@@ -13,16 +16,14 @@ $ component install andrepolischuk/skrlspeed
 
 ### skrlspeed([element])
 
-  Return controller for `element`, default `document`
+  Create controller for `element`, default `document`
 
 ```js
 var ctrlElement = skrlspeed(document.querySelector('.element'));
 var ctrlPage = skrlspeed();
 ```
 
-### Controller
-
-#### Controller#set(factor)
+### .set(factor)
 
   Set speed factor, default 1
 
@@ -30,7 +31,7 @@ var ctrlPage = skrlspeed();
 skrlspeed().set(-1);
 ```
 
-#### Controller#clear()
+### .clear()
 
   Set default speed factor
 
