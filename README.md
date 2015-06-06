@@ -2,14 +2,14 @@
 
   > Scroll speed controller
 
-## Instalation
+## Install
 
 ```sh
-$ npm install --save skrlspeed
+npm install --save skrlspeed
 ```
 
 ```sh
-$ component install andrepolischuk/skrlspeed
+component install andrepolischuk/skrlspeed
 ```
 
 ## API
