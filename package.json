@@ -9,7 +9,11 @@
   ],
   "repository": "andrepolischuk/skrlspeed",
   "dependencies": {
+    "component-bind": "^1.0.0",
     "eventwheel": "^0.3.0"
+  },
+  "browser": {
+    "bind": "component-bind"
   },
   "main": "index.js",
   "author": "Andrey Polischuk <andre.polischuk@gmail.com>",

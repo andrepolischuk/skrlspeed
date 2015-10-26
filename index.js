@@ -5,6 +5,7 @@
  * Module dependencies
  */
 
+var bind = require('bind');
 var wheel = require('eventwheel');
 
 /**
@@ -31,9 +32,9 @@ function Controller(el) {
   if (typeof el === 'string') el = document.querySelector(el);
   if (!el) el = document;
 
-  this._element = el;
-  this._factor = 1;
-  this._fn = scroll(this);
+  this.element = el;
+  this.factor = 1;
+  this.scroll = this.scroll.bind(this);
 }
 
 /**
@@ -45,8 +46,8 @@ function Controller(el) {
  */
 
 Controller.prototype.set = function(factor) {
-  this._factor = factor || 1;
-  wheel[this._factor === 1 ? 'unbind' : 'bind'](this._element, this._fn);
+  this.factor = factor || 1;
+  wheel[this.factor === 1 ? 'unbind' : 'bind'](this.element, this.scroll);
   return this;
 };
 
@@ -70,16 +71,14 @@ Controller.prototype.clear = function() {
  * @api public
  */
 
-function scroll(obj) {
-  return function(e) {
-    if (e.preventDefault) e.preventDefault();
-    e.returnValue = false;
+Controller.prototype.scroll = function(e) {
+  if (e.preventDefault) e.preventDefault();
+  e.returnValue = false;
 
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var delta = e.deltaY || e.detail || (-e.wheelDelta);
-    delta /= Math.abs(delta);
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var delta = e.deltaY || e.detail || (-e.wheelDelta);
+  delta /= Math.abs(delta);
 
-    document.documentElement.scrollTop =
-      document.body.scrollTop = scrollTop + obj._factor * delta * speed;
-  };
+  document.documentElement.scrollTop =
+    document.body.scrollTop = scrollTop + this.factor * delta * speed;
 }
