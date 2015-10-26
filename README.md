@@ -1,6 +1,6 @@
 # skrlspeed
 
-  > Scroll speed controller
+> Scroll speed controller
 
 ## Install
 
@@ -16,7 +16,7 @@ component install andrepolischuk/skrlspeed
 
 ### skrlspeed([element])
 
-  Create controller for `element`, default `document`
+Create controller for `element`, default `document`
 
 ```js
 var ctrlElement = skrlspeed(document.querySelector('.element'));
@@ -25,7 +25,7 @@ var ctrlPage = skrlspeed();
 
 ### .set(factor)
 
-  Set speed factor, default 1
+Set speed factor, default 1
 
 ```js
 skrlspeed().set(-1);
@@ -33,8 +33,8 @@ skrlspeed().set(-1);
 
 ### .clear()
 
-  Set default speed factor
+Set default speed factor
 
 ## License
 
-  MIT
+MIT
