@@ -28,6 +28,6 @@ Controller.prototype.scroll = function (e) {
   e.returnValue = false;
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   var delta = e.deltaY || e.detail || (-e.wheelDelta);
-  delta /= Math.abs(delta);
+  delta /= delta ? Math.abs(delta) : 1;
   document.documentElement.scrollTop = document.body.scrollTop = scrollTop + this.factor * delta * speed;
 };
